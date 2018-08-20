@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <item
+        android:id="@+id/faboptions_create_poll"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="@string/fab_create" />
+
+    <item
+        android:id="@+id/faboptions_dummy"
+        android:icon="@drawable/ic_add_white_24dp"
+        android:title="@string/fab_create" />
+</menu>
