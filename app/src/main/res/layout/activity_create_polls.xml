@@ -1,51 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/backgroundColor"
+    android:orientation="vertical"
     tools:context=".CreatePollsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:text="What is the name of the poll?"
-        android:textSize="25sp" />
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="264dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="49dp"
-        android:hint="Enter name of poll" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:textAlignment="center"
+            android:text="@string/why_poll"
+            android:textColor="?attr/textColor"
+            android:textSize="25sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="195dp"
-        android:text="Add options"
-        android:textSize="25sp" />
+        <EditText
+            android:id="@+id/poll_question"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fadeScrollbars="true"
+            android:hapticFeedbackEnabled="false"
+            android:hint="@string/enter_poll_question"
+            android:inputType="textCapSentences|textAutoCorrect"
+            android:singleLine="true"
+            android:soundEffectsEnabled="true"
+            android:textColor="?attr/textColor" />
 
-    <EditText
-        android:layout_width="264dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="123dp"
-        android:hint="Option 1" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="@string/add_options"
+            android:textColor="?attr/textColor"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_width="104dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="62dp"
-        android:text="Create" />
+        <LinearLayout
+            android:id="@+id/editTextContainer"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" />
 
-</RelativeLayout>
+        <ImageButton
+            android:id="@+id/addEditText"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="?attr/buttonColor"
+            android:src="@drawable/ic_add_white_24dp" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:background="?attr/buttonColor"
+            android:text="@string/create_poll"
+            android:textColor="?attr/textColor" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -5,4 +5,8 @@
     <string name="title_activity_splash">SplashActivity</string>
     <string name="toggle_dark">Toggle dark theme</string>
     <string name="fab_create">Create poll</string>
+    <string name="why_poll">What would you want to create a poll about?</string>
+    <string name="enter_poll_question">Enter poll question</string>
+    <string name="add_options">Add options</string>
+    <string name="create_poll">Create poll</string>
 </resources>
