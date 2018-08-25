@@ -17,8 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:textAlignment="center"
             android:text="@string/why_poll"
+            android:textAlignment="center"
             android:textColor="?attr/textColor"
             android:textSize="25sp" />
 
@@ -69,8 +69,8 @@
             android:layout_gravity="center"
             android:layout_marginBottom="40dp"
             android:layout_marginTop="30dp"
-            android:padding="10dp"
             android:background="?attr/buttonColor"
+            android:padding="10dp"
             android:text="@string/create_poll"
             android:textColor="?attr/textColor" />
 

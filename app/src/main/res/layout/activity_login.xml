@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?attr/backgroundColor"
-    android:id="@+id/login_view"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -13,7 +13,7 @@
         android:layout_height="170dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="100dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logo" />
 
@@ -22,19 +22,22 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="165dp"
+        android:layout_marginBottom="240dp"
+        android:fontFamily="@font/mthin"
         android:text="@string/app_name"
         android:textColor="?attr/textColor"
-        android:textSize="35sp" />
+        android:textSize="45sp" />
 
     <com.shobhitpuri.custombuttons.GoogleSignInButton
         android:id="@+id/sign_in_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="230dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="145dp"
+        android:fontFamily="@font/mlight"
         android:text="@string/google_sign_in"
+        android:textColor="?attr/textColor"
         app:isDarkTheme="true" />
 
 </RelativeLayout>

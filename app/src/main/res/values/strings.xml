@@ -9,4 +9,5 @@
     <string name="enter_poll_question">Enter poll question</string>
     <string name="add_options">Add options</string>
     <string name="create_poll">Create poll</string>
+    <string name="sign_out">Sign out</string>
 </resources>
