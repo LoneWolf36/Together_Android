@@ -10,6 +10,11 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +59,10 @@ public class CreatePollsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 setQuestion(pollQuestion);
                 setOptions(options);
+                // Write a message to the database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("");
+                myRef.setValue(d);
             }
         });
     }
@@ -78,17 +87,20 @@ public class CreatePollsActivity extends AppCompatActivity {
         if (pollQuestion.getText().toString().matches("")) Toasty.error(CreatePollsActivity.this, "Question can't be empty!", Toast.LENGTH_SHORT, true).show();
         else {
             d.setPollQuestion(pollQuestion.getText().toString());
-            Log.i("mine", d.getPollQuestion());
+            Log.i("my_question", d.getPollQuestion());
         }
     }
 
     public void setOptions(ArrayList<EditText> editTextList) {
-        Toast.makeText(this, "Im here", Toast.LENGTH_SHORT).show();
-        for(EditText editText : editTextList) {
-            Toast.makeText(this, editText.getText().toString(), Toast.LENGTH_SHORT).show();
-            d.setOptions(editText.getText().toString());
+        if(editTextList.size() == 0) Toasty.error(CreatePollsActivity.this, "Enter at least one option", Toast.LENGTH_SHORT, true).show();
+        else {
+            for(EditText editText : editTextList) {
+                if (editText.getText().toString().matches("")) Toasty.error(CreatePollsActivity.this, "Can't keep options empty", Toast.LENGTH_SHORT, true).show();
+                else if(i > (editTextList.size()+1)) Toasty.error(CreatePollsActivity.this, "Can't keep options empty", Toast.LENGTH_SHORT, true).show();
+                else d.setOptions(editText.getText().toString());
+            }
+            for(String options : d.options)
+                Log.i("my_answer", options);
         }
-        for(String options : d.options)
-        Log.i("mine", options);
     }
 }
